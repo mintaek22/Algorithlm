@@ -11,6 +11,9 @@ import java.util.StringTokenizer
  * 최소한만 바꾸게
  * https://www.acmicpc.net/problem/1018
  */
+private val arr1 = makeCheck1()
+private var arr:Array<Array<Char>> = emptyArray()
+
 fun main(){
 
     val br = BufferedReader(InputStreamReader(System.`in`))
@@ -20,23 +23,7 @@ fun main(){
     val N = line1.nextToken().toInt()
     val M = line1.nextToken().toInt()
 
-    val arr1 = makeCheck1()
-    val arr = Array(N){Array(M) {' '}}
-
-    fun check(a: Int,b: Int): Int{
-        var sum = 0
-        for (i in 0 until 8){
-            for(j in 0 until 8){
-                if(arr1[i][j] == arr[i+a][j+b]){
-                    sum++
-                }
-            }
-        }
-        if(sum>32){
-            return 64-sum
-        }
-        return sum
-    }
+    arr = Array(N){Array(M) {' '}}
 
     for(i in 0 until N){
         val line = br.readLine()
@@ -71,6 +58,21 @@ fun makeCheck1(): Array<Array<Char>> {
         }
     }
     return arr
+}
+
+fun check(a: Int,b: Int): Int{
+    var sum = 0
+    for (i in 0 until 8){
+        for(j in 0 until 8){
+            if(arr1[i][j] == arr[i+a][j+b]){
+                sum++
+            }
+        }
+    }
+    if(sum>32){
+        return 64-sum
+    }
+    return sum
 }
 
 

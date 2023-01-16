@@ -6,6 +6,7 @@ import java.io.InputStreamReader
 /**
  * https://www.acmicpc.net/problem/2231
  */
+
 fun main(){
 
     val br = BufferedReader(InputStreamReader(System.`in`))
