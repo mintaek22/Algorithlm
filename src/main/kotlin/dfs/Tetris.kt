@@ -1,4 +1,4 @@
-package bruteForce
+package dfs
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -54,13 +54,13 @@ fun main(){
 fun dfs(i:Int,j:Int,score:Int,depth:Int){
 
     if(depth == 4){
-        ans= max(score,ans)
+        ans = max(score, ans)
         return
     }
 
     for(a in 0 until 4){
-        val newI = i+dx[a]
-        val newJ = j+dy[a]
+        val newI = i+ dx[a]
+        val newJ = j+ dy[a]
         if(newI in 0 until N && newJ in 0 until M){
             if(check[newI][newJ]) {
                 check[newI][newJ] = false
@@ -78,11 +78,11 @@ fun oh(i:Int,j:Int){
     var cnt = 0
 
     for(a in 0 until 4){
-        val newI = i+dx[a]
-        val newJ = j+dy[a]
+        val newI = i+ dx[a]
+        val newJ = j+ dy[a]
         if(newI in 0 until N && newJ in 0 until M){
            cnt++
-            num = min(num,arr[newI][newJ])
+            num = min(num, arr[newI][newJ])
             score += arr[newI][newJ]
         }
     }
@@ -90,5 +90,5 @@ fun oh(i:Int,j:Int){
         score -= num
     }
 
-    ans= max(score,ans)
+    ans = max(score, ans)
 }

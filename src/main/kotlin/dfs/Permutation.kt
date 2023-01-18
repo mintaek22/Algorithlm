@@ -1,4 +1,4 @@
-package bruteForce
+package dfs
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -14,7 +14,7 @@ fun main(){
     val br = BufferedReader(InputStreamReader(System.`in`))
     N = br.readLine().toInt()
 
-    visit = Array(N+1) {false}
+    visit = Array(N +1) {false}
 
     for(i in 1 .. N){
         visit[i] = true

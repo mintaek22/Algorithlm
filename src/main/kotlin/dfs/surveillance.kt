@@ -1,4 +1,4 @@
-package bruteForce
+package dfs
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
